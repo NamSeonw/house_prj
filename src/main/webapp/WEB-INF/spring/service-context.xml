@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- data 설정을 위한 xml -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://mybatis.org/schema/mybatis-spring 
+        http://mybatis.org/schema/mybatis-spring-1.2.xsd
+        http://www.springframework.org/schema/jdbc 
+        http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
+		">
+		
+		<context:component-scan base-package="com.house.web.dao, com.house.web.service"/>
+        
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+	        <property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
+	        <property name="url" value="jdbc:mysql://13.125.249.142/house?autoReconnect=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;useUnicode=true"/> 
+	        <property name="username" value="momo"/> 
+	        <property name="password" value="0112"/>
+ 	   </bean>     
+        
+         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> <!-- jdbc코드를 만들어주는 공장 -->
+        	<property name="dataSource" ref="dataSource" /> <!-- db정보의 bean id를 사용 ref에 -->
+        	<property name="mapperLocations" value="classpath*:com/house/web/dao/mybatis/mapper/*.xml"/>
+        </bean> <!-- 얘네도 mapper container 에 들어간다. -->
+        
+      	  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+      	  	<property name="basePackage" value="com.house.web.dao.mybatis" />
+  		  </bean>
+        
+        <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> <!-- 공장에서 가져다 쓰기위해 만들어야하는 애들 주문넣고 연결하기 session-->
+        	<constructor-arg index="0" ref="sqlSessionFactory"/> <!-- ref는 공장의 id명을 사용 -->
+        </bean>
+        
+</beans>

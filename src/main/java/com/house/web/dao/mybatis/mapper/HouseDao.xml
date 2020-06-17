@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.house.web.dao.HouseDao">
+  
+  <select id="getHouseList" resultType="com.house.web.entity.House">
+		select * from houseInfo where reg_date = #{date}
+  </select>
+  
+  <select id="getHouse" resultType="com.house.web.entity.House">
+		select * from houseInfo where id = #{id}
+  </select>
+  
+  <insert id="insert" parameterType="com.house.web.entity.House">
+		INSERT INTO 
+			houseInfo
+			(
+				incident_num,
+				house_num,
+				appraisal_amount,
+				row_appraisal_amount,
+				date_of_sale,
+				house_info,
+				purpose,
+				full_address,
+				host,
+				incident_case,
+				start,
+				dividend_request_date,
+				billing_amount,
+				file_real_name,
+				file_path
+			)
+		VALUES
+			(
+				#{incident_num},
+				#{house_num},
+				#{appraisal_amount},
+				#{row_appraisal_amount},
+				#{date_of_sale},
+				#{house_info},
+				#{purpose},
+				#{full_address},
+				#{host},
+				#{incident_case},
+				#{start},
+				#{dividend_request_date},
+				#{billing_amount},
+				#{file_real_name},
+				#{file_path}
+			)
+  </insert>
+</mapper>
