@@ -1,4 +1,4 @@
-package com.house.web.dao.mybatis;
+package com.houseprj.web.dao.mybatis;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.house.web.dao.HouseDao;
-import com.house.web.entity.House;
+import com.houseprj.web.dao.HouseDao;
+import com.houseprj.web.entity.House;
 
 @Repository
 public class MybatisHouseDao implements HouseDao{

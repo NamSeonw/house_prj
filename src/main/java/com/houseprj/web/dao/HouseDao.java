@@ -1,11 +1,10 @@
-package com.house.web.service;
+package com.houseprj.web.dao;
 
 import java.util.List;
 
-import com.house.web.entity.House;
+import com.houseprj.web.entity.House;
 
-public interface HouseService{
-
+public interface HouseDao {
 	List<House> getHouseList();
 	
 	List<House> getHouseList(String date);

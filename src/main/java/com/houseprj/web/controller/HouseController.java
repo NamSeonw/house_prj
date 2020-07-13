@@ -1,4 +1,4 @@
-package com.house.web.controller;
+package com.houseprj.web.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.house.web.entity.House;
-import com.house.web.service.HouseService;
+import com.houseprj.web.entity.House;
+import com.houseprj.web.service.HouseService;
 
 @Controller
 public class HouseController {

@@ -1,13 +1,13 @@
-package com.house.web.service.implement;
+package com.houseprj.web.service.implement;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.house.web.dao.HouseDao;
-import com.house.web.entity.House;
-import com.house.web.service.HouseService;
+import com.houseprj.web.dao.HouseDao;
+import com.houseprj.web.entity.House;
+import com.houseprj.web.service.HouseService;
 
 @Service
 public class HouseServiceImpl implements HouseService{

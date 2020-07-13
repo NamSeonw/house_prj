@@ -1,4 +1,4 @@
-package com.house.web.entity;
+package com.houseprj.web.entity;
 
 import java.io.File;
 
@@ -38,5 +38,4 @@ public class House {
 	private String file_path;
 	private String house_num;
 	private File up;
-
 }

@@ -13,7 +13,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan
-		base-package="com.house.web.controller " /> <!-- scan은 annotation은 생략해도 포함되어있다. -->
+		base-package="com.houseprj.web.controller " /> <!-- scan은 annotation은 생략해도 포함되어있다. -->
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- url을 가로채서 붙인당 -->
